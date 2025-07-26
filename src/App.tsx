@@ -1,4 +1,6 @@
-import './App.css'
+import { CardList } from "./components/CardList"
+
+
 
 function App() {
 
@@ -6,7 +8,7 @@ function App() {
   return (
     <div>
         <h1>Pokedex</h1>
-        
+        < CardList />
     </div>
   )
 }

@@ -1,6 +1,11 @@
+import type { Pokemon } from "../types/Pokemon"
 
-export const Card = () => {
+
+export const Card = ({pokemon} : {pokemon: Pokemon}) => {
   return (
-    <div>Card</div>
+    <div className="card">
+      <img src={pokemon.image} alt={pokemon.name} />
+      <h3>{pokemon.name}</h3>
+    </div>
   )
 }
