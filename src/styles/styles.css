@@ -1,0 +1,24 @@
+*{
+    
+    box-sizing: border-box;
+}
+
+.card-list{
+    
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 15rem;
+    border: 1px solid #ccc;
+    
+}
+
+.card img{
+    width: 15rem;
+    height: auto;
+}

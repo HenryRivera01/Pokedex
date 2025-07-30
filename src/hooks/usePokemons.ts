@@ -14,6 +14,7 @@ export const usePokemons = (offset: number, limit: number) => {
       const results = raw.map((p: Pokemon)=>{
         const id = p.url.split("/").filter(Boolean).pop();
         return{
+          id,
           name: p.name,
           url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
         }

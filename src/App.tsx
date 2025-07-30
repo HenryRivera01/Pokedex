@@ -1,5 +1,5 @@
-import { CardList } from "./components/CardList"
-
+import { CardList } from "./components/CardList";
+import "./styles/styles.css";
 
 
 function App() {
