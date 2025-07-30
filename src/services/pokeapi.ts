@@ -6,3 +6,4 @@ export const getPokemons = async (limit = 20, offset = 0) =>{
     console.log(data);
     return data.results;
 }
+
