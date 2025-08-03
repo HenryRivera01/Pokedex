@@ -1,13 +1,18 @@
-import type { Pokemon } from "../types/Pokemon"
 
+import type { Pokemon } from "../types/Pokemon";
 
-export const Card = ({pokemon} : {pokemon: Pokemon}) => {
+type CardProps = {
+  pokemon: Pokemon;
+  openModal: (id: string | number) => void;
+};
+
+export const Card = ({ pokemon, openModal }: CardProps) => {
  
   return (
-
-    <div className="card">
+    <div onClick={() => openModal(pokemon.id)} className="card">
       <h3>{pokemon.name}</h3>
+      <p>{`mi id es ${pokemon.id}`}</p>
       <img src={pokemon.url} alt={pokemon.name} />
     </div>
-  )
-}
+  );
+};

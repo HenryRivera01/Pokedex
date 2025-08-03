@@ -16,3 +16,13 @@ export const getPokemonByName = async (name: string) => {
   console.log(data);
   return data;
 };
+
+export const getCharacteristics = async (id: number) => {
+  const resp = await fetch(`${BASE_URL}characteristic/{id}/${id}`);
+  if (!resp) throw new Error("Pokemon not found");
+  const data = await resp.json();
+  console.log(data);
+  return data;
+};
+
+

@@ -1,5 +1,5 @@
 import { CardList } from "./components/CardList";
-import { SearchBar } from "./components/SearchBar";
+import { Modal } from "./components/Modal";
 import "./styles/styles.css";
 
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
         <h1>Pokedex</h1>
-        < SearchBar />
+        < Modal />
         < CardList />
     </div>
   )

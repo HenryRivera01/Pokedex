@@ -3,8 +3,11 @@ import { getPokemonByName } from "../services/pokeapi";
 import type { Pokemon } from "../types/Pokemon";
 import { Card } from "./Card";
 
+type SearchBarProps = {
+  openModal: (id: string | number) => void;
+};
 
-export const SearchBar = () => {
+export const SearchBar = ({ openModal }: SearchBarProps) => {
   const [query, setQuery] = useState("");
   const [pokemon, setPokemon] = useState<Pokemon | null>(null);
   const [error, setError] = useState("");
@@ -21,17 +24,18 @@ export const SearchBar = () => {
     }
   }
 
-  const id = pokemon?.id
+  const id = pokemon?.id;
+  console.log("el pokemon encontrado es ", typeof id);
 
   return (
     <div>
       <input
-      type="text"
-      required
-      placeholder="Search pokemon by name"
-      value={query}
-      onChange={ (e) => setQuery(e.target.value)}
-      onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+        type="text"
+        required
+        placeholder="Search pokemon by name"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleSearch()}
       />
       <button onClick={handleSearch}>Search</button>
       {error && <p>{error}</p>}
@@ -41,7 +45,12 @@ export const SearchBar = () => {
             id: pokemon.id,
             name: pokemon.name,
             url: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+            types: pokemon.types,
+            height: pokemon.height,
+            weight: pokemon.weight,
+            abilities: pokemon.abilities,
           }}
+          openModal={openModal}
         />
       )}
     </div>
