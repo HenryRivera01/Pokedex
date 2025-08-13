@@ -1,24 +1,69 @@
-*{
-    
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-.card-list{
-    
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-    width: 15rem;
-    border: 1px solid #ccc;
-    
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
+  width: 15rem;
+  border: 1px solid #ccc;
 }
 
-.card img{
-    width: 15rem;
-    height: auto;
+.card img {
+  width: 11rem;
+  height: auto;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 9999;
+}
+
+.modal-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: min(95vw, 700px);
+  max-height: 90vh;
+  overflow: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-card img {
+  width: 14rem;
+  height: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
 }
